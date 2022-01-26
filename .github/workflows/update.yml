@@ -1,0 +1,27 @@
+name: update
+on: 
+  schedule:
+    - cron: 40 23 * * *
+
+jobs:
+  build:
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: delete file
+        run: rm -f hey.txt
+      - name: rename file
+        run: mv bye.txt hello.txt
+        
+      - name: Commit files
+        run: |
+          git config --local user.email "xman2156@gmail.com"
+          git config --local user.name "xman2156"
+          git add .
+          git commit -m "Update page for new epsiode"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
