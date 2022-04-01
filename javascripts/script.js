@@ -1,6 +1,16 @@
+//Automatic episode change
+var episodeList = [
+  ['The Monster You Created', '???', new Date("2021-11-20T00:00:00-06:00"), ]
+];
+var startDate = new Date("2022-03-19T10:00:00-06:00");
+var today = Date.now();
+var weeksPassed = 0; //Math.floor((today - Date.parse(startDate))/(24*3600*1000*7)); //comment out equation when on hiatus
+var latestRelease = episodeList[weeksPassed][2];
+var nextRelease = episodeList[weeksPassed][3];
+document.getElementById("previousEpisode").innerHTML = episodeList[weeksPassed][0];
+document.getElementById("nextEpisode").innerHTML = episodeList[weeksPassed][1]
+
 var oneDay = 24*60*60*1000;
-var latestRelease = new Date("2021-11-20T02:00:00-06:00"); // Newest Episode Release
-//var nextRelease = new Date("2021-11-20T02:00:00-06:00"); // Next Episode release
 var mode = 0; //DD:HH:MM:SS mode is default
 var lastHiatusMention = null;
 	
