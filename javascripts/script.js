@@ -121,7 +121,7 @@ function timer(updown, zeroTime, id){
 //The Grand Array of Hiatuses
 var hiatusList = [
 ['Last Episode','Next Episode','Preceding Release','Following Release','Hiatus Length','Note'],
-['The Monster You Created','???','Nov 20 2021','???',,'']
+['The Monster You Created','???','Nov 20 2021','Nov 2024',,'']
 ];
 
 function hiatusRankCheck(){
